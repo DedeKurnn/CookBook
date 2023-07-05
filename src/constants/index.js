@@ -1,0 +1,78 @@
+export const diet = [
+	{name: "balanced", type: 'diet'},
+	{name: "high-fiber", type: 'diet'},
+	{name: "high-protein", type: 'diet'},
+	{name: "low-carb", type: 'diet'},
+	{name: "low-fat", type: 'diet'},
+	{name: "low-sodium", type: 'diet'},
+];
+
+export const health = [
+    {name: 'alcohol-cocktail', type: 'health'},
+    {name: 'alcohol-free', type: 'health'},
+    {name: 'celery-free', type: 'health'},
+    {name: 'crustacean-free', type: 'health'},
+    {name: 'dairy-free', type: 'health'},
+    {name: 'egg-free', type: 'health'},
+    {name: 'fish-free', type: 'health'},
+    {name: 'gluten-free', type: 'health'},
+    {name: 'keto-friendly', type: 'health'},
+    {name: 'kidney-friendly', type: 'health'},
+    {name: 'kosher', type: 'health'},
+    {name: 'low-potassium', type: 'health'},
+    {name: 'low-sugar', type: 'health'},
+    {name: 'lupine-free', type: 'health'},
+    {name: 'no-oil-added', type: 'health'},
+    {name: 'peanut-free', type: 'health'},
+    {name: 'pork-free', type: 'health'},
+    {name: 'vegan', type: 'health'},
+    {name: 'vegetarian', type: 'health'},
+]
+
+export const cuisineType = [
+    {name: 'American', type: 'cuisineType'},
+    {name: 'Asian', type: 'cuisineType'},
+    {name: 'British', type: 'cuisineType'},
+    {name: 'Caribbean', type: 'cuisineType'},
+    {name: 'Central Europe', type: 'cuisineType'},
+    {name: 'Chinese', type: 'cuisineType'},
+    {name: 'Eastern Europe', type: 'cuisineType'},
+    {name: 'French', type: 'cuisineType'},
+    {name: 'Indian', type: 'cuisineType'},
+    {name: 'Italian', type: 'cuisineType'},
+    {name: 'Japanese', type: 'cuisineType'},
+    {name: 'Kosher', type: 'cuisineType'},
+    {name: 'Mediterranean', type: 'cuisineType'},
+    {name: 'Mexican', type: 'cuisineType'},
+    {name: 'Middle Eastern', type: 'cuisineType'},
+    {name: 'Nordic', type: 'cuisineType'},
+    {name: 'South American', type: 'cuisineType'},
+    {name: 'South East Asian', type: 'cuisineType'},
+]
+
+export const mealType = [
+    {name: 'Breakfast', type: 'mealType'},
+    {name: 'Dinner', type: 'mealType'},
+    {name: 'Lunch', type: 'mealType'},
+    {name: 'Snack', type: 'mealType'},
+    {name: 'Teatime', type: 'mealType'},
+]
+
+export const dishType = [
+    {name: 'Biscuits and cookies', type: 'dishType'},
+    {name: 'Bread', type: 'dishType'},
+    {name: 'Cereals', type: 'dishType'},
+    {name: 'Condiments and sauces', type: 'dishType'},
+    {name: 'Desserts', type: 'dishType'},
+    {name: 'Drinks', type: 'dishType'},
+    {name: 'Main course', type: 'dishType'},
+    {name: 'Pancake', type: 'dishType'},
+    {name: 'Preps', type: 'dishType'},
+    {name: 'Preserve', type: 'dishType'},
+    {name: 'Salad', type: 'dishType'},
+    {name: 'Sandwiches', type: 'dishType'},
+    {name: 'Side dish', type: 'dishType'},
+    {name: 'Soup', type: 'dishType'},
+    {name: 'Starter', type: 'dishType'},
+    {name: 'Sweets', type: 'dishType'},
+]
