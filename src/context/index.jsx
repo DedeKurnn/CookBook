@@ -1,6 +1,5 @@
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
-import { env } from 'import.meta'
 
 export const RecipeContext = createContext();
 
@@ -14,14 +13,13 @@ export const RecipeContextProvider = ({ children }) => {
 	const [response, setResponse] = useState({});
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState();
-	const appId = env.REACT_APP_EDAMAM_APP_ID;
-	const apiKey = env.REACT_APP_EDAMAM_API_KEY;
-	const baseUrl = env.REACT_APP_BASE_URL;
+    const baseUrl = import.meta.env.VITE_REACT_APP_BASE_URL;
+    const apiKey = import.meta.env.VITE_REACT_APP_EDAMAM_API_KEY;
+    const appId = import.meta.env.VITE_REACT_APP_EDAMAM_APP_ID;
 
 	const totalQuery = `${healthQuery}${mealTypeQuery}${dishTypeQuery}${dietQuery}${cuisineTypeQuery}`.replace(/ /g, '%20');
-	const url =
-		`${baseUrl}?type=public&beta=false&q=${query}&app_id=${appId}&api_key=${apiKey}${totalQuery}`;	
-
+	const url = `${baseUrl}?type=public&beta=false&q=${query}&app_id=${appId}&app_key=${apiKey}${totalQuery}`;
+	console.log(url)
 	const onQuery = (value, type) => {
 		switch (type) {
 			case "health":
@@ -48,6 +46,11 @@ export const RecipeContextProvider = ({ children }) => {
 		<RecipeContext.Provider
 			value={{
 				onQuery,
+				healthQuery,
+				dishTypeQuery,
+				mealTypeQuery,
+				dietQuery,
+				cuisineTypeQuery,
 				url,
 				query,
 				setQuery,
