@@ -1,9 +1,12 @@
 import { json } from "react-router-dom"
+import { env } from 'import.meta'
 
 export const recipeDetailLoader = async ({params}) => {
-    const appId = '&app_id=af8f2662&app_key=8d08930086bef226d85e93b83466ed15'
+    const baseUrl = env.REACT_APP_BASE_URL;
+    const apiKey = env.REACT_APP_EDAMAM_API_KEY;
+    const appId = env.REACT_APP_EDAMAM_APP_ID;
     const id = params.id
-    const response = await fetch(`https://api.edamam.com/api/recipes/v2/${id}?type=public${appId}`)
+    const response = await fetch(`${baseUrl}/${id}?type=public&app_id=${appId}&api_key=${apiKey}`)
 
     if (!response.ok) {
         throw json({message: 'Could not load page'}, {status: 500})

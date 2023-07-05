@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
+import { env } from 'import.meta'
 
 export const RecipeContext = createContext();
 
@@ -13,11 +14,13 @@ export const RecipeContextProvider = ({ children }) => {
 	const [response, setResponse] = useState({});
 	const [loading, setLoading] = useState(false);
 	const [error, setError] = useState();
-	const appId = '&app_id=af8f2662&app_key=8d08930086bef226d85e93b83466ed15'
+	const appId = env.REACT_APP_EDAMAM_APP_ID;
+	const apiKey = env.REACT_APP_EDAMAM_API_KEY;
+	const baseUrl = env.REACT_APP_BASE_URL;
 
 	const totalQuery = `${healthQuery}${mealTypeQuery}${dishTypeQuery}${dietQuery}${cuisineTypeQuery}`.replace(/ /g, '%20');
 	const url =
-		`https://api.edamam.com/api/recipes/v2?type=public&beta=false&q=${query}${appId}${totalQuery}`;	
+		`${baseUrl}?type=public&beta=false&q=${query}&app_id=${appId}&api_key=${apiKey}${totalQuery}`;	
 
 	const onQuery = (value, type) => {
 		switch (type) {
@@ -45,11 +48,6 @@ export const RecipeContextProvider = ({ children }) => {
 		<RecipeContext.Provider
 			value={{
 				onQuery,
-				healthQuery,
-				mealTypeQuery,
-				dishTypeQuery,
-				cuisineTypeQuery,
-				dietQuery,
 				url,
 				query,
 				setQuery,
